@@ -1,0 +1,76 @@
+#English word or phrase:translation into Russian
+carrot:морковка
+lentils:чечевица
+mushrooms:грибы
+oatmeal:овсянка
+chicken:чурица
+ground meat:фарш
+onion:лук
+table:стол
+chair:стул
+coffee table:кофе ни стол
+dog:собака
+milk:молоко
+dill:укроп
+bread:хлеп
+buckwheat:гречка
+rice:рис
+pepper:перец
+green pepper:зелоний перец
+dumpling:пельмени
+beer:пива
+wine:вино
+water:вода
+spoon:лошка
+fork:вилка
+knife:
+glass:стакан
+mug:крушка
+
+warm:тиепло
+hot:жарко
+hungry:голодний
+mediocre:так себе
+good:хорошо
+bad:плохо
+excellent:отлично
+of course:конечно
+my:мой
+friend:дрог
+apron:фартук
+simple soup:похлебка
+nickname:похлебкин
+apartment:квартира
+sofa:диван
+towel:палатиенза
+shoes:обуф
+boots:бутинкий
+fashionable coat:польто
+fur coat:шуба
+Monday:Понедельник
+Tuesday:Вторник
+Wednesday:Среда
+Thursday:Четверг
+Friday:Пятница
+Saturday:Суббота
+Sunday:Воскресенье
+today:сегодня
+every day:каш д ден
+money:денги
+
+thanks:спасиба
+how are you: 
+her name is: 
+his name is: 
+my name is: 
+
+
+to want: 
+to cook: 
+to enjoy: 
+to feel: 
+to buy: 
+to be buying: 
+to need: 
+
+
