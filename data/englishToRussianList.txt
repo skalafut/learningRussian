@@ -12,18 +12,27 @@ coffee table:кофе ни стол
 dog:собака
 milk:молоко
 dill:укроп
-bread:хлеп
+bread:хлеб
 buckwheat:гречка
 rice:рис
 pepper:перец
 green pepper:зелоний перец
 dumpling:пельмени
-beer:пива
+beer:пиво
 wine:вино
 water:вода
+potato:картошка
+spinach:шпинат
+cilantro:кориандер
+cinnamon:корица
+herring:селёдка
+herring under the coat:селёдка под шубо
+
+
+
 spoon:лошка
 fork:вилка
-knife:
+knife:нош
 glass:стакан
 mug:крушка
 
@@ -36,8 +45,15 @@ bad:плохо
 excellent:отлично
 of course:конечно
 my:мой
-friend:дрог
+friend:друг
 apron:фартук
+ladle:половник
+large pot:коструля
+pot with handle:
+steamer:пароварка
+steamer for manty:мантоварка
+
+
 simple soup:похлебка
 nickname:похлебкин
 apartment:квартира
@@ -57,20 +73,32 @@ Sunday:Воскресенье
 today:сегодня
 every day:каш д ден
 money:денги
+hurry:давай
+stupid:тупой
 
-thanks:спасиба
-how are you: 
-her name is: 
-his name is: 
-my name is: 
+furthermore:дальше болше
+come with me:поехали
+thanks:спосиба
+maybe:пожалуй
+how are you:как дела
+her name is:её зовут 
+his name is:его зовут
+my name is:меня зовут
+who:кто
+where to|what for:куда
+
+intercourse:общение
 
 
-to want: 
-to cook: 
-to enjoy: 
-to feel: 
-to buy: 
-to be buying: 
-to need: 
+to want:хочу
+to cook:готовить
+to enjoy:любить
+to feel:чувствовать
+to buy:купить
+to be buying:покупать
+to need:
+
+you need steamer to cook manty:тебе нужна пароварка чтобы готовить манты
+
 
 
