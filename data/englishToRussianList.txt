@@ -8,7 +8,7 @@ ground meat:фарш
 onion:лук
 table:стол
 chair:стул
-coffee table:кофе ни стол
+coffee table:кофейный стол
 dog:собака
 milk:молоко
 dill:укроп
@@ -16,7 +16,7 @@ bread:хлеб
 buckwheat:гречка
 rice:рис
 pepper:перец
-green pepper:зелоний перец
+green pepper:зеленый перец
 dumpling:пельмени
 beer:пиво
 wine:вино
@@ -30,15 +30,15 @@ herring under the coat:селёдка под шубо
 
 
 
-spoon:лошка
+spoon:ложка
 fork:вилка
-knife:нош
+knife:нож
 glass:стакан
-mug:крушка
+mug:кружка
 
-warm:тиепло
+warm:тепло
 hot:жарко
-hungry:голодний
+hungry:голодный
 mediocre:так себе
 good:хорошо
 bad:плохо
@@ -49,18 +49,18 @@ friend:друг
 apron:фартук
 ladle:половник
 large pot:коструля
-pot with handle:
-steamer:пароварка
+pot with handle:ковш
+steamship:пароварка
 steamer for manty:мантоварка
-
+cotton swap:вото
 
 simple soup:похлебка
 nickname:похлебкин
 apartment:квартира
 sofa:диван
-towel:палатиенза
-shoes:обуф
-boots:бутинкий
+towel:полотенце
+shoes:обувь
+boots:ботинки
 fashionable coat:польто
 fur coat:шуба
 Monday:Понедельник
@@ -71,15 +71,18 @@ Friday:Пятница
 Saturday:Суббота
 Sunday:Воскресенье
 today:сегодня
-every day:каш д ден
-money:денги
+every day:каждый день
+money:деньги
 hurry:давай
 stupid:тупой
 
+how to say child:как перевести child
 furthermore:дальше болше
 come with me:поехали
-thanks:спосиба
+thanks:спасибо
 maybe:пожалуй
+right now:сейчас
+absolutely right now:сейчас же
 how are you:как дела
 her name is:её зовут 
 his name is:его зовут
@@ -91,14 +94,41 @@ intercourse:общение
 
 
 to want:хочу
+I want milk:Я хочу молоко
+you want oatmeal:ты хочешь овсянка
+Aysa wants chicken:Айса она хочет курица
+Sergei wants buckwheat:Сергей он хочет гречка
+we want beer:мы хотим пиво
+they want water:они хотят вода
 to cook:готовить
-to enjoy:любить
+to like/enjoy doing:любить
+I like to cook:Я люблю готовить
+you like to walk:вы любить идти
+Sasha likes to buy pelmeni:Саша она любит купить пельмени
+Devin likes money:Девин он любит деньги
+we like to buy shoes:мы любим купить обувь
+they like to buy spinach:они любит купить шпинат
+
 to feel:чувствовать
+I feel bad:Я чувствою плохо
+you feel good:ты чувствуешь хорошо
+Megan feels hot:Меган она чувствует жарко
+Dad feels excellent:Па он чувствует отлично
+we feel hungry:мы чувствуем голодный
+they feel so-so:они чувствуют так себе
 to buy:купить
 to be buying:покупать
-to need:
+to need:нуждаться/нужно
+to walk:идти
+to drive:вести
+to ride:ехать
 
-you need steamer to cook manty:тебе нужна пароварка чтобы готовить манты
+will:буду
+you need a steamer to cook manty:тебе нужна пароварка чтобы готовить манты
 
+it is me, Sean:это я, Шон
+it is Sergei:это Сергей
+
+it is hot, you want a beer:сей час жарко, ты хочешь пива
 
 
