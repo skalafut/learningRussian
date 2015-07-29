@@ -27,7 +27,12 @@ cilantro:кориандер
 cinnamon:корица
 herring:селёдка
 herring under the coat:селёдка под шубо
-
+icecream:мороженое
+almond:миндаль
+chocolate:шоколад
+caramel:карамель
+banana:банан
+marshmallow:зефир
 
 
 spoon:ложка
@@ -50,9 +55,10 @@ apron:фартук
 ladle:половник
 large pot:коструля
 pot with handle:ковш
-steamship:пароварка
+steamcooker:пароварка
 steamer for manty:мантоварка
-cotton swap:вото
+cotton swab:вото
+clothes:одежда
 
 simple soup:похлебка
 nickname:похлебкин
@@ -91,6 +97,13 @@ who:кто
 where to|what for:куда
 
 intercourse:общение
+heyday:зенит
+
+car:автомобиль
+bicycle:велосипед
+bus:автобус
+train:поезд
+private bus:моршутка
 
 
 to want:хочу
@@ -101,13 +114,14 @@ Sergei wants buckwheat:Сергей он хочет гречка
 we want beer:мы хотим пиво
 they want water:они хотят вода
 to cook:готовить
-to like/enjoy doing:любить
-I like to cook:Я люблю готовить
-you like to walk:вы любить идти
-Sasha likes to buy pelmeni:Саша она любит купить пельмени
-Devin likes money:Девин он любит деньги
-we like to buy shoes:мы любим купить обувь
-they like to buy spinach:они любит купить шпинат
+to love:любить
+I love to cook:Я люблю готовить
+you love to walk:вы любить идти
+Sasha loves to buy pelmeni:Саша она любит купить пельмени
+Devin loves money:Девин он любит деньги
+we love to buy shoes:мы любим купить обувь
+they love to buy spinach:они любит купить шпинат
+Vova loves to travel via private bus:Вова он любит ехать в моршутка
 
 to feel:чувствовать
 I feel bad:Я чувствою плохо
@@ -120,8 +134,22 @@ to buy:купить
 to be buying:покупать
 to need:нуждаться/нужно
 to walk:идти
+Today I walk:Сегодня Я иду
+tomorrow you walk home:завтра ты идёш в дом
+we walk to the apartment:мы идём в квартира
+they walk to the Russian grocery store:они идут в русский продуктовы магазин
+Aysa walks to the car:Айса она идёт в автомобиль
+Devin walks to the train:Девин он идёт в поезд
+
+
 to drive:вести
 to ride:ехать
+Vova rides the train every day:Вова он едит в поезд каждый день
+I ride the bus:Я еду в автобус
+You ride the car:Ты едешь в автомобиль 
+We ride the private bus:Мы едем в моршутка
+Sasha rides the train:Саша едет в поезд
+
 
 will:буду
 you need a steamer to cook manty:тебе нужна пароварка чтобы готовить манты
@@ -129,6 +157,9 @@ you need a steamer to cook manty:тебе нужна пароварка чтоб
 it is me, Sean:это я, Шон
 it is Sergei:это Сергей
 
-it is hot, you want a beer:сей час жарко, ты хочешь пива
+it is hot, you want a beer:сейчас жарко, ты хочешь пива
 
+hello this is Похлебкин:ало Похлебкин слушает
+happy birthday my friend:с днем рожденый мой друг
+27 - this is a great age:27 - это серьезный возраст
 
