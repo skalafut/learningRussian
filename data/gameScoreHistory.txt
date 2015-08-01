@@ -1,0 +1,2 @@
+date	US central time 	numWordsTested  	numWordsCorrect		numHintsOnCorrectWords		numHintsOnIncorrectWords
+08/01/15	16:00	19	15	9	8

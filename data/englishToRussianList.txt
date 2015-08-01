@@ -3,7 +3,7 @@ carrot:морковка
 lentils:чечевица
 mushrooms:грибы
 oatmeal:овсянка
-chicken:чурица
+chicken:курица
 ground meat:фарш
 onion:лук
 table:стол
@@ -33,6 +33,9 @@ chocolate:шоколад
 caramel:карамель
 banana:банан
 marshmallow:зефир
+walnut:грецкий орех
+orange:апельсин
+strawberry:клубника
 
 
 spoon:ложка
@@ -95,6 +98,8 @@ his name is:его зовут
 my name is:меня зовут
 who:кто
 where to|what for:куда
+where are they:где они
+what is this:что эта
 
 intercourse:общение
 heyday:зенит
@@ -140,15 +145,22 @@ we walk to the apartment:мы идём в квартира
 they walk to the Russian grocery store:они идут в русский продуктовы магазин
 Aysa walks to the car:Айса она идёт в автомобиль
 Devin walks to the train:Девин он идёт в поезд
+we walk to the store:мы идём в магазин
 
 
 to drive:вести
+I drive a car:Я веду в автомобил
+you drive a bus:ты ведёшь в автобус
+Vova drives a train:Вова он ведёт в поезд
+We drive a private bus:Мы ведём в моршутка
+they drive a car home:они ведут в автомобил в дом
+
 to ride:ехать
 Vova rides the train every day:Вова он едит в поезд каждый день
 I ride the bus:Я еду в автобус
 You ride the car:Ты едешь в автомобиль 
-We ride the private bus:Мы едем в моршутка
-Sasha rides the train:Саша едет в поезд
+We ride the private bus:Мы едим в моршутка
+Sasha rides the train:Саша едит в поезд
 
 
 will:буду
