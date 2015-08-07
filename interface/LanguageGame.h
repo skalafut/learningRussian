@@ -12,6 +12,10 @@ class LanguageGame{
 			_wordListFile(pathToInputFile),
 			_scoreHistoryFile(pathToScoreHistoryFile){};
 
+		///fill the private member var _mapBtwnLanguages with words and phrases from _wordListFile, and set initial values for the numbers used in score keeping
+		void setupGame();
+
+
 		///insert mode allows words and phrases to be added to _wordList.
 		///the word or phrase in both languages must be provided in the correct order, and separated by a colon
 		void insertMode();
