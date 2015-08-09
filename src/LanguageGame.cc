@@ -8,6 +8,7 @@
 #include <cmath>
 
 #define DEBUG
+#define DEBUG2
 
 using namespace std;
 
@@ -64,6 +65,22 @@ void LanguageGame::insertMode(){
 }///end insertMode()
 
 void LanguageGame::runGame(){
+	ofstream scoreKeeper(_scoreHistoryFile.c_str(),ofstream::app);
+	scoreKeeper <<_date<<"    "<<_time<<"    "<<_numTested<<"    "<<_numCorrect<<"    "<<_numHintsOnCorrectTranslations<<"    "<<_numHintsOnIncorrectTranslations<<endl;
+
+
+
+	scoreKeeper.close();
+
+#ifdef DEBUG2
+	ifstream checkScoreFile(_scoreHistoryFile.c_str());
+	while(checkScoreFile.peek() != EOF && checkScoreFile.good() ){
+		char aLine[500];
+		checkScoreFile.getline(aLine,500,'\n');
+		cout << aLine << endl;
+	}
+#endif
+
 
 }///end runGame()
 

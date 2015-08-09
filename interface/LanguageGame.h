@@ -15,6 +15,16 @@ class LanguageGame{
 		///fill the private member var _mapBtwnLanguages with words and phrases from _wordListFile, and set initial values for the numbers used in score keeping
 		void setupGame();
 
+		///initialize the integers and strings used for tracking game performance
+		void initializePerformanceMetrics(){
+			_numTested = 0;
+			_numCorrect = 0;
+			_numHintsOnCorrectTranslations = 0;
+			_numHintsOnIncorrectTranslations = 0;
+			_date = "DATE";
+			_time = "TIME";
+		};
+
 
 		///insert mode allows words and phrases to be added to _wordList.
 		///the word or phrase in both languages must be provided in the correct order, and separated by a colon
@@ -46,5 +56,14 @@ class LanguageGame{
 		 * date          time    #tested  #correct #hintsCorrect  #hintsIncorrect
 		 */
 		string _scoreHistoryFile;
+		
+		///the following integer and string variables are reset to zero at the beginning of every new game, and are written to _scoreHistoryFile
+		///at the end of every game
+		int _numTested;	///< number of words and phrases tested
+		int _numCorrect;	///< number of words and phrases which were correctly translated
+		int _numHintsOnCorrectTranslations;	///< number of hints used on words and phrases which were correctly translated
+		int _numHintsOnIncorrectTranslations;	///< number of hints used on words and phrases which were incorrectly translated
+		string _date, _time;
+
 
 };///end class LanguageGame
