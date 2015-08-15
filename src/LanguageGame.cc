@@ -6,9 +6,10 @@
 #include <iostream>
 #include <fstream>
 #include <cmath>
+#include <ctime>
 
-#define DEBUG
-#define DEBUG2
+//#define DEBUG
+//#define DEBUG2
 
 using namespace std;
 
@@ -52,6 +53,8 @@ void LanguageGame::setupGame(){
 		
 	}///end while()
 
+	inputListStrm.close();
+
 #ifdef DEBUG
 	for(map<string,string>::const_iterator phraseIt=_mapBtwnLanguages.begin(); phraseIt!=_mapBtwnLanguages.end(); phraseIt++){
 		cout<<"the key \t"<< phraseIt->first<<"\t is tied to the value \t"<< phraseIt->second<<"\t in _mapBtwnLanguages"<<endl;
@@ -61,14 +64,63 @@ void LanguageGame::setupGame(){
 }///end setupGame()
 
 void LanguageGame::insertMode(){
+	ofstream writeToWordList(_wordListFile.c_str(),ofstream::app);	///< open file in append mode
+	bool addAnotherWord = false;
+	do{
+		cout<<"enter a word or phrase in English, a colon without leading or trailing whitespace, and the translation into Russian"<<endl;
+		string newAddition;
+		cin >> newAddition;
+		while(newAddition.find(":") == string::npos){
+			newAddition.clear();
+			cout<<"enter the new word or phrase with a colon separating the two translations"<<endl;
+			cin >> newAddition;
+		}
+
+		///now write the string to _wordListFile
+		writeToWordList << newAddition << endl;
+
+		///ask the user if they want to add another word
+		cout<<"do you want to add another word or phrase? (y/n):\t";
+		string response;
+		cin >> response;
+		if(response.find('y') != string::npos) addAnotherWord = true;
+
+	}while(addAnotherWord);
+
+	cout<<"leaving insert mode"<<endl;
+	writeToWordList.close();
 
 }///end insertMode()
 
+void LanguageGame::setDateAndTime(string newDateAndTime){
+	_dateAndTime = newDateAndTime;
+}
+
+void LanguageGame::updateHintsOnCorrectTranslations(int hintsOnOneCorrectWord){
+	_numHintsOnCorrectTranslations += hintsOnOneCorrectWord
+}
+
+void LanguageGame::updateHintsOnIncorrectTranslations(int hintsOnOneIncorrectWord){
+	_numHintsOnIncorrectTranslations += hintsOnOneIncorrectWord
+}
+
+void LanguageGame::incrementNumTested(){_numTested++}
+
+void LanguageGame::incrementNumCorrect(){_numCorrect++}
+
+
 void LanguageGame::runGame(){
+	///open a file stream to the txt file which tracks how often the game is played, the number of correct translations, etc
 	ofstream scoreKeeper(_scoreHistoryFile.c_str(),ofstream::app);
-	scoreKeeper <<_date<<"    "<<_time<<"    "<<_numTested<<"    "<<_numCorrect<<"    "<<_numHintsOnCorrectTranslations<<"    "<<_numHintsOnIncorrectTranslations<<endl;
+	
+	///compute the date and time (US central zone) when the game begins, and save it to the class variable _dateAndTime 
+	time_t rawTime;
+	time(&rawTime);	///< this isn't a constructor! calling this fills rawTime with useful information.
+	struct tm * timeInfo = localTime(&rawTime);
+	string startDateAndTime(asctime(timeInfo));
+	setDateAndTime(startDateAndTime);
 
-
+	scoreKeeper <<_dateAndTime<<"    "<<_numTested<<"    "<<_numCorrect<<"    "<<_numHintsOnCorrectTranslations<<"    "<<_numHintsOnIncorrectTranslations<<endl;
 
 	scoreKeeper.close();
 

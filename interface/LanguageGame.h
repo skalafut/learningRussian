@@ -21,8 +21,7 @@ class LanguageGame{
 			_numCorrect = 0;
 			_numHintsOnCorrectTranslations = 0;
 			_numHintsOnIncorrectTranslations = 0;
-			_date = "DATE";
-			_time = "TIME";
+			_dateAndTime = "DATE  TIME";
 		};
 
 
@@ -37,6 +36,15 @@ class LanguageGame{
 		///after three incorrect guesses, the correct translation will be printed to the screen,
 		///and the game will move on to another word or phrase.
 		void runGame();
+
+		///methods to update int and string private member vars
+		///setDateAndTime() will be called once per game
+		///the other increment and update fxns will be called many times per game
+		void setDateAndTime(string newDateAndTime);
+		void updateHintsOnCorrectTranslations(int hintsOnOneCorrectWord);
+		void updateHintsOnIncorrectTranslations(int hintsOnOneIncorrectWord);
+		void incrementNumTested();
+		void incrementNumCorrect();
 
 	private:
 		string _wordListFile;	///< path to the txt file which holds pairs of words and phrases in two languages 
@@ -63,7 +71,7 @@ class LanguageGame{
 		int _numCorrect;	///< number of words and phrases which were correctly translated
 		int _numHintsOnCorrectTranslations;	///< number of hints used on words and phrases which were correctly translated
 		int _numHintsOnIncorrectTranslations;	///< number of hints used on words and phrases which were incorrectly translated
-		string _date, _time;
+		string _dateAndTime;
 
 
 };///end class LanguageGame
