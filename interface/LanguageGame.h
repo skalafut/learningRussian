@@ -1,4 +1,5 @@
 #include <map>
+#include <vector>
 #include <string>
 
 using namespace std;
@@ -22,15 +23,32 @@ class LanguageGame{
 			_numHintsOnCorrectTranslations = 0;
 			_numHintsOnIncorrectTranslations = 0;
 			_dateAndTime = "DATE  TIME";
+			_gameMode = "MODE";
+			_numNewAdditions = 0;
+			_numReviewed = 0;
 		};
-
 
 		///insert mode allows words and phrases to be added to _wordList.
 		///the word or phrase in both languages must be provided in the correct order, and separated by a colon
 		void insertMode();
 
 
-		///run the game.  First version will print one word or phrase to the screen, and ask for
+		///test the player's vocabulary
+		void testMode();
+
+
+		///review words and phrases which have been saved to the word and phrase bank
+		void reviewMode();
+
+
+		///coming in the future!  The computer randomly picks adjectives, nouns, and verbs from
+		///the word bank, and constructs a sentence.  The user (a native speaker) then tells
+		///the computer if this sentence is sensible or nonsense.  The computer will use machine
+		///learning to develop its own intuition of how to develop logical sentences.
+		void nativeSpeakerMode();
+
+		///start a new game session.  The player will pick the mode at the beginning - insert, test, review, or native speaker.
+		///First version of test mode will print one word or phrase to the screen, and ask for
 		///the translation.  Each incorrect answer will result in a hint printed to the screen.
 		///The hint will be of the form "the word or phrase begins with: firstChar".
 		///after three incorrect guesses, the correct translation will be printed to the screen,
@@ -38,17 +56,22 @@ class LanguageGame{
 		void runGame();
 
 		///methods to update int and string private member vars
-		///setDateAndTime() will be called once per game
+		///recordDateAndTime() and recordGameMode() will be called once per game
 		///the other increment and update fxns will be called many times per game
-		void setDateAndTime(string newDateAndTime);
+		void recordDateAndTime(string currentDateAndTime);
 		void updateHintsOnCorrectTranslations(int hintsOnOneCorrectWord);
 		void updateHintsOnIncorrectTranslations(int hintsOnOneIncorrectWord);
 		void incrementNumTested();
 		void incrementNumCorrect();
+		void incrementNumReviewed();
+		void incrementNumNewAdditions();
+		void recordGameMode(string mode);
 
 	private:
 		string _wordListFile;	///< path to the txt file which holds pairs of words and phrases in two languages 
 		map<string,string> _mapBtwnLanguages; 	///< key is a word or phrase in one language, value is the translation
+		vector<string> _wordsInLanguageOne;		///< contains the keys of _mapBtwnLanguages
+		vector<string> _wordsInLanguageTwo;		///< contains the values of _mapBtwnLanguages
 		
 		/**
 		 * _scoreHistoryFile shows how well I performed in prior sessions of the game
@@ -60,18 +83,21 @@ class LanguageGame{
 		 * a perfect game session, where all words/phrases which were tested were translated correctly with a few
 		 * hints, would result in this entry in _scoreHistoryFile:
 		 *
-		 * 08/10/15      13:30      30      30         5                  0
-		 * date          time    #tested  #correct #hintsCorrect  #hintsIncorrect
+		 * 08/10/15      13:30  test      0             0        30      30         5                  0
+		 * date          time   mode   #reviewed    #added    #tested  #correct  #hintsCorrect  #hintsIncorrect
 		 */
 		string _scoreHistoryFile;
 		
 		///the following integer and string variables are reset to zero at the beginning of every new game, and are written to _scoreHistoryFile
 		///at the end of every game
-		int _numTested;	///< number of words and phrases tested
-		int _numCorrect;	///< number of words and phrases which were correctly translated
-		int _numHintsOnCorrectTranslations;	///< number of hints used on words and phrases which were correctly translated
-		int _numHintsOnIncorrectTranslations;	///< number of hints used on words and phrases which were incorrectly translated
+		int _numTested;	///< number of words and phrases tested in one game running in test mode
+		int _numCorrect;	///< number of words and phrases which were correctly translated in one game running in test mode
+		int _numHintsOnCorrectTranslations;	///< number of hints used on words and phrases which were correctly translated in one game running in test mode
+		int _numHintsOnIncorrectTranslations;	///< number of hints used on words and phrases which were incorrectly translated in one game running in test mode
+		int _numNewAdditions;	///< number of new words and phrases added in one game running in insert mode
+		int _numReviewed;	///< number of words and phrases which were reviewed in one game running in review mode
 		string _dateAndTime;
+		string _gameMode;	///< the mode of the game, like insert, test, review, or native speaker
 
 
 };///end class LanguageGame

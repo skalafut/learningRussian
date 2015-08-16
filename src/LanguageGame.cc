@@ -1,5 +1,6 @@
 #include <LanguageGame.h>
 #include <map>
+#include <vector>
 #include <string>
 #include <cstdlib>
 #include <stdio.h>
@@ -7,6 +8,7 @@
 #include <fstream>
 #include <cmath>
 #include <ctime>
+#include <random>
 
 //#define DEBUG
 //#define DEBUG2
@@ -50,6 +52,8 @@ void LanguageGame::setupGame(){
 #endif
 
 		_mapBtwnLanguages[phraseInLanguageOne] = phraseInLanguageTwo;
+		_wordsInLanguageOne.push_back(phraseInLanguageOne);
+		_wordsInLanguageTwo.push_back(phraseInLanguageTwo);
 		
 	}///end while()
 
@@ -78,6 +82,7 @@ void LanguageGame::insertMode(){
 
 		///now write the string to _wordListFile
 		writeToWordList << newAddition << endl;
+		incrementNumNewAdditions();
 
 		///ask the user if they want to add another word
 		cout<<"do you want to add another word or phrase? (y/n):\t";
@@ -92,21 +97,45 @@ void LanguageGame::insertMode(){
 
 }///end insertMode()
 
-void LanguageGame::setDateAndTime(string newDateAndTime){
-	_dateAndTime = newDateAndTime;
+
+///print out a word or phrase in both languages, then ask the user
+///if they want to see another word or phrase
+void LanguageGame::reviewMode(){
+
+}///end reviewMode()
+
+void LanguageGame::testMode(){
+
+}///end testMode()
+
+
+void LanguageGame::nativeSpeakerMode(){
+
+}///end nativeSpeakerMode()
+
+
+void LanguageGame::recordDateAndTime(string currentDateAndTime){
+	_dateAndTime = currentDateAndTime;
 }
 
 void LanguageGame::updateHintsOnCorrectTranslations(int hintsOnOneCorrectWord){
-	_numHintsOnCorrectTranslations += hintsOnOneCorrectWord
+	_numHintsOnCorrectTranslations += hintsOnOneCorrectWord;
 }
 
 void LanguageGame::updateHintsOnIncorrectTranslations(int hintsOnOneIncorrectWord){
-	_numHintsOnIncorrectTranslations += hintsOnOneIncorrectWord
+	_numHintsOnIncorrectTranslations += hintsOnOneIncorrectWord;
 }
 
-void LanguageGame::incrementNumTested(){_numTested++}
+void LanguageGame::incrementNumTested(){_numTested++;}
 
-void LanguageGame::incrementNumCorrect(){_numCorrect++}
+void LanguageGame::incrementNumCorrect(){_numCorrect++;}
+
+void LanguageGame::incrementNumReviewed(){_numReviewed++;}
+
+void LanguageGame::incrementNumNewAdditions(){_numNewAdditions++;}
+
+void LanguageGame::recordGameMode(string mode){_gameMode = mode;}
+
 
 
 void LanguageGame::runGame(){
@@ -116,11 +145,35 @@ void LanguageGame::runGame(){
 	///compute the date and time (US central zone) when the game begins, and save it to the class variable _dateAndTime 
 	time_t rawTime;
 	time(&rawTime);	///< this isn't a constructor! calling this fills rawTime with useful information.
-	struct tm * timeInfo = localTime(&rawTime);
+	struct tm * timeInfo = localtime(&rawTime);
 	string startDateAndTime(asctime(timeInfo));
-	setDateAndTime(startDateAndTime);
+	recordDateAndTime(startDateAndTime);
 
-	scoreKeeper <<_dateAndTime<<"    "<<_numTested<<"    "<<_numCorrect<<"    "<<_numHintsOnCorrectTranslations<<"    "<<_numHintsOnIncorrectTranslations<<endl;
+	string selectedMode;
+	bool knownMode = true;	///< indicates if user input mode does not match one of the known modes
+	
+	do{
+		cout<<"what game mode would you like to run?"<<endl;
+		cout<<"type r for review mode, and review existing words and phrases in the word bank without being tested"<<endl;
+		cout<<"type t for test mode, and put your vocabulary to the test!"<<endl;
+		cout<<"type i for insert mode, and add new words and phrases to the word bank"<<endl;
+		cout<<"type ns for native speaker mode, and teach the computer how to combine existing words in the word bank into sensible sentences.  For native speakers only!"<<endl;
+
+		cin >> selectedMode;
+		if(selectedMode.find('r')==string::npos && selectedMode.find('i')==string::npos && selectedMode.find('t')==string::npos && selectedMode.find("ns")==string::npos ) knownMode = false;
+		if(!knownMode) cout<<"the game mode you entered is not recognized!"<<endl;
+
+	}while(!knownMode);
+
+	///now that a game mode has been selected, run the game!
+	recordGameMode(selectedMode);
+	if(selectedMode=="r") reviewMode();
+	if(selectedMode=="i") insertMode();
+	if(selectedMode=="t") testMode();
+	if(selectedMode=="ns") nativeSpeakerMode();
+
+
+	scoreKeeper <<_dateAndTime<<"    "<<_gameMode <<"    "<<_numReviewed <<"    "<<_numNewAdditions <<"    "<<_numTested<<"    "<<_numCorrect<<"    "<<_numHintsOnCorrectTranslations<<"    "<<_numHintsOnIncorrectTranslations<<endl;
 
 	scoreKeeper.close();
 

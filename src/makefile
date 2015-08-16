@@ -9,7 +9,7 @@ OBJDIR = obj
 LIBS=-lm
 
 #define compiler type and compile time flags 
-CC=g++
+CC=g++ -std=c++0x
 CFLAGS=-I$(IDIR)
 
 
