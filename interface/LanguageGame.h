@@ -1,5 +1,6 @@
 #include <map>
 #include <vector>
+#include <utility>
 #include <string>
 
 using namespace std;
@@ -45,7 +46,7 @@ class LanguageGame{
 		///the word bank, and constructs a sentence.  The user (a native speaker) then tells
 		///the computer if this sentence is sensible or nonsense.  The computer will use machine
 		///learning to develop its own intuition of how to develop logical sentences.
-		void nativeSpeakerMode();
+		void nativeSpeakerInsertMode();
 
 		///start a new game session.  The player will pick the mode at the beginning - insert, test, review, or native speaker.
 		///First version of test mode will print one word or phrase to the screen, and ask for
@@ -66,12 +67,25 @@ class LanguageGame{
 		void incrementNumReviewed();
 		void incrementNumNewAdditions();
 		void recordGameMode(string mode);
+		void addIndexToIndexesAlreadyShownVector(int key);
+		
+		///check if the word or phrase tied to _mapBtwnLanguages[val] has already been shown
+		///return true if it has been shown
+		bool hasAlreadyBeenShown(int val);
 
 	private:
 		string _wordListFile;	///< path to the txt file which holds pairs of words and phrases in two languages 
-		map<string,string> _mapBtwnLanguages; 	///< key is a word or phrase in one language, value is the translation
-		vector<string> _wordsInLanguageOne;		///< contains the keys of _mapBtwnLanguages
-		vector<string> _wordsInLanguageTwo;		///< contains the values of _mapBtwnLanguages
+		
+		///key for map is an int representing the order in which the word or phrase pair was read in
+		///the value for the map is a pair which links the a word or phrase which has been translated into two languages 
+		map<int, pair<string,string> > _mapBtwnLanguages;
+		
+		
+		///when a new game starts this vector will have no elements in it
+		///if the game is run in test or review mode, then this vector will keep track of the words and phrases from _mapBtwnLanguages
+		///which have been shown
+		///at the end of every game in review or test mode this vector will be emptied
+		vector<int> _indexesAlreadyShown;
 		
 		/**
 		 * _scoreHistoryFile shows how well I performed in prior sessions of the game

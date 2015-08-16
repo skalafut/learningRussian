@@ -1,6 +1,7 @@
 #include <LanguageGame.h>
 #include <map>
 #include <vector>
+#include <utility>
 #include <string>
 #include <cstdlib>
 #include <stdio.h>
@@ -13,7 +14,18 @@
 //#define DEBUG
 //#define DEBUG2
 
+
 using namespace std;
+
+///this method is designed to ask a question, receive y/n input, and update a bool variable
+void askToContinue(bool & keepGoing, string outputStatement){
+	cout << outputStatement;
+	string response;
+	cin >> response;
+	if(response.find('y') != string::npos) keepGoing = true;
+	else keepGoing = false;
+
+}///end askToContinue()
 
 void LanguageGame::setupGame(){
 	ifstream inputListStrm(_wordListFile.c_str());
@@ -22,7 +34,9 @@ void LanguageGame::setupGame(){
 	cout<<"setup ifstream to _wordListFile"<<endl;
 #endif
 
+	int pairNumber = -1;	///< used as the key for _mapBtwnLanguages
 	while(inputListStrm.peek() != EOF && inputListStrm.good() ){
+		pairNumber++;
 		if(inputListStrm.peek() == 35){
 			///this line begins with a #, and should be skipped
 			char discard[256];
@@ -51,17 +65,14 @@ void LanguageGame::setupGame(){
 		cout<<"phraseInLanguageTwo = \t"<< phraseInLanguageTwo <<endl;
 #endif
 
-		_mapBtwnLanguages[phraseInLanguageOne] = phraseInLanguageTwo;
-		_wordsInLanguageOne.push_back(phraseInLanguageOne);
-		_wordsInLanguageTwo.push_back(phraseInLanguageTwo);
-		
+		_mapBtwnLanguages[pairNumber] = make_pair(phraseInLanguageOne,phraseInLanguageTwo);
 	}///end while()
 
 	inputListStrm.close();
 
 #ifdef DEBUG
-	for(map<string,string>::const_iterator phraseIt=_mapBtwnLanguages.begin(); phraseIt!=_mapBtwnLanguages.end(); phraseIt++){
-		cout<<"the key \t"<< phraseIt->first<<"\t is tied to the value \t"<< phraseIt->second<<"\t in _mapBtwnLanguages"<<endl;
+	for(map<int, pair<string,string> >::const_iterator phraseIt=_mapBtwnLanguages.begin(); phraseIt!=_mapBtwnLanguages.end(); phraseIt++){
+		cout<<"the phrase \t"<< (phraseIt->second).first <<"\t is linked to the phrase \t"<< (phraseIt->second).second <<"\t in _mapBtwnLanguages"<<endl;
 	}///end loop over _mapBtwnLanguages elements
 #endif
 
@@ -71,7 +82,7 @@ void LanguageGame::insertMode(){
 	ofstream writeToWordList(_wordListFile.c_str(),ofstream::app);	///< open file in append mode
 	bool addAnotherWord = false;
 	do{
-		cout<<"enter a word or phrase in English, a colon without leading or trailing whitespace, and the translation into Russian"<<endl;
+		cout<<"enter a word or phrase in English, followed by a colon without leading or trailing whitespace, and the translation into Russian"<<endl;
 		string newAddition;
 		cin >> newAddition;
 		while(newAddition.find(":") == string::npos){
@@ -85,10 +96,7 @@ void LanguageGame::insertMode(){
 		incrementNumNewAdditions();
 
 		///ask the user if they want to add another word
-		cout<<"do you want to add another word or phrase? (y/n):\t";
-		string response;
-		cin >> response;
-		if(response.find('y') != string::npos) addAnotherWord = true;
+		askToContinue(addAnotherWord,"do you want to add another word or phrase? (y/n):\t");
 
 	}while(addAnotherWord);
 
@@ -101,6 +109,33 @@ void LanguageGame::insertMode(){
 ///print out a word or phrase in both languages, then ask the user
 ///if they want to see another word or phrase
 void LanguageGame::reviewMode(){
+	default_random_engine randNumGenerator;
+
+	///the first element in _mapBtwnLanguages has key = 0
+	uniform_int_distribution<int> uniformIntDistribution(0,_mapBtwnLanguages.size()-1);
+	int wordIndex;
+	bool keepReviewing = false;
+
+	do{
+		///generate a random integer
+		wordIndex = uniformIntDistribution(randNumGenerator);
+		if(hasAlreadyBeenShown(wordIndex)){
+			while(hasAlreadyBeenShown(wordIndex)){
+				///continue randomly generating an int until a yet unshown one is found
+				wordIndex = uniformIntDistribution(randNumGenerator);
+			}///end while(word has already been shown)
+
+		}///end if(word has already been shown)
+
+		///now we have a key for _mapBtwnLanguages which has not been used
+		cout<< (_mapBtwnLanguages[wordIndex]).first <<" == "<< (_mapBtwnLanguages[wordIndex]).second <<endl;
+		askToContinue(keepReviewing,"do you want to continue reviewing? (y/n):\t");
+		incrementNumReviewed();
+		addIndexToIndexesAlreadyShownVector(wordIndex);
+
+	}while(keepReviewing);
+
+	cout<<"leaving review mode"<<endl;
 
 }///end reviewMode()
 
@@ -109,9 +144,9 @@ void LanguageGame::testMode(){
 }///end testMode()
 
 
-void LanguageGame::nativeSpeakerMode(){
+void LanguageGame::nativeSpeakerInsertMode(){
 
-}///end nativeSpeakerMode()
+}///end nativeSpeakerInsertMode()
 
 
 void LanguageGame::recordDateAndTime(string currentDateAndTime){
@@ -136,7 +171,16 @@ void LanguageGame::incrementNumNewAdditions(){_numNewAdditions++;}
 
 void LanguageGame::recordGameMode(string mode){_gameMode = mode;}
 
+void LanguageGame::addIndexToIndexesAlreadyShownVector(int key){
+	_indexesAlreadyShown.push_back(key);
+}
 
+bool LanguageGame::hasAlreadyBeenShown(int val){
+	for(unsigned int i=0; i<_indexesAlreadyShown.size() ;i++){
+		if(_indexesAlreadyShown[i] == val) return true;
+	}
+	return false;
+}
 
 void LanguageGame::runGame(){
 	///open a file stream to the txt file which tracks how often the game is played, the number of correct translations, etc
@@ -157,7 +201,7 @@ void LanguageGame::runGame(){
 		cout<<"type r for review mode, and review existing words and phrases in the word bank without being tested"<<endl;
 		cout<<"type t for test mode, and put your vocabulary to the test!"<<endl;
 		cout<<"type i for insert mode, and add new words and phrases to the word bank"<<endl;
-		cout<<"type ns for native speaker mode, and teach the computer how to combine existing words in the word bank into sensible sentences.  For native speakers only!"<<endl;
+		cout<<"type ns for native speaker insert mode, and teach the computer how to combine existing words in the word bank into sensible sentences, then add these words into the word bank.  For native speakers only!"<<endl;
 
 		cin >> selectedMode;
 		if(selectedMode.find('r')==string::npos && selectedMode.find('i')==string::npos && selectedMode.find('t')==string::npos && selectedMode.find("ns")==string::npos ) knownMode = false;
@@ -170,7 +214,7 @@ void LanguageGame::runGame(){
 	if(selectedMode=="r") reviewMode();
 	if(selectedMode=="i") insertMode();
 	if(selectedMode=="t") testMode();
-	if(selectedMode=="ns") nativeSpeakerMode();
+	if(selectedMode=="ns") nativeSpeakerInsertMode();
 
 
 	scoreKeeper <<_dateAndTime<<"    "<<_gameMode <<"    "<<_numReviewed <<"    "<<_numNewAdditions <<"    "<<_numTested<<"    "<<_numCorrect<<"    "<<_numHintsOnCorrectTranslations<<"    "<<_numHintsOnIncorrectTranslations<<endl;
