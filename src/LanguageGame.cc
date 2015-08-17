@@ -109,27 +109,16 @@ void LanguageGame::insertMode(){
 ///print out a word or phrase in both languages, then ask the user
 ///if they want to see another word or phrase
 void LanguageGame::reviewMode(){
-	default_random_engine randNumGenerator;
-
-	///the first element in _mapBtwnLanguages has key = 0
-	uniform_int_distribution<int> uniformIntDistribution(0,_mapBtwnLanguages.size()-1);
 	int wordIndex;
 	bool keepReviewing = false;
 
 	do{
-		///generate a random integer
-		wordIndex = uniformIntDistribution(randNumGenerator);
-		if(hasAlreadyBeenShown(wordIndex)){
-			while(hasAlreadyBeenShown(wordIndex)){
-				///continue randomly generating an int until a yet unshown one is found
-				wordIndex = uniformIntDistribution(randNumGenerator);
-			}///end while(word has already been shown)
-
-		}///end if(word has already been shown)
-
+		wordIndex = findNewRandomElement();
 		///now we have a key for _mapBtwnLanguages which has not been used
 		cout<< (_mapBtwnLanguages[wordIndex]).first <<" == "<< (_mapBtwnLanguages[wordIndex]).second <<endl;
+		cout<<"  "<<endl;
 		askToContinue(keepReviewing,"do you want to continue reviewing? (y/n):\t");
+		cout<<"  "<<endl;
 		incrementNumReviewed();
 		addIndexToIndexesAlreadyShownVector(wordIndex);
 
@@ -140,6 +129,11 @@ void LanguageGame::reviewMode(){
 }///end reviewMode()
 
 void LanguageGame::testMode(){
+	bool keepTesting = false;
+	do{
+
+		askToContinue(keepTesting,"do you want to continue vocabulary testing? (y/n):\t");
+	}while(keepTesting);
 
 }///end testMode()
 
@@ -181,6 +175,22 @@ bool LanguageGame::hasAlreadyBeenShown(int val){
 	}
 	return false;
 }
+
+
+int LanguageGame::findNewRandomElement(){
+	default_random_engine randNumGenerator;
+	uniform_int_distribution<int> uniformIntDistribution(0,_mapBtwnLanguages.size()-1);
+	int newElement = uniformIntDistribution(randNumGenerator);
+
+	if(hasAlreadyBeenShown(newElement)){
+		while(hasAlreadyBeenShown(newElement)){
+			newElement = uniformIntDistribution(randNumGenerator);
+		}///end while(newElement has already been used)
+	}///end if(newElement has already been used)
+
+	return newElement;
+
+}///end findNewRandomElement()
 
 void LanguageGame::runGame(){
 	///open a file stream to the txt file which tracks how often the game is played, the number of correct translations, etc

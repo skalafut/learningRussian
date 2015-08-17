@@ -72,6 +72,9 @@ class LanguageGame{
 		///check if the word or phrase tied to _mapBtwnLanguages[val] has already been shown
 		///return true if it has been shown
 		bool hasAlreadyBeenShown(int val);
+		
+		///use this fxn to randomly find an integer which is a key in _mapBtwnLanguages, and has not been used already
+		int findNewRandomElement();
 
 	private:
 		string _wordListFile;	///< path to the txt file which holds pairs of words and phrases in two languages 

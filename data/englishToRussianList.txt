@@ -175,3 +175,4 @@ hello this is Похлебкин:ало Похлебкин слушает
 happy birthday my friend:с днем рожденый мой друг
 27 - this is a great age:27 - это серьезный возраст
 #
+tuna:тунец

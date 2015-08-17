@@ -3,7 +3,7 @@
 #include <iostream>
 #include <stdio.h>
 
-#define DEBUG
+//#define DEBUG
 
 using namespace std;
 
