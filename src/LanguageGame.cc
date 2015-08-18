@@ -130,9 +130,25 @@ void LanguageGame::reviewMode(){
 
 void LanguageGame::testMode(){
 	bool keepTesting = false;
-	do{
+	int wordIndex, languageIndex;	///<languageIndex chooses which language to show to the player
 
-		askToContinue(keepTesting,"do you want to continue vocabulary testing? (y/n):\t");
+	do{
+		int numHintsUsed = 0;
+		string playerInput;
+		wordIndex = findNewRandomElement();
+		languageIndex = randomOneOrTwo();
+		if(languageIndex == 1){
+			cout<< (_mapBtwnLanguages[wordIndex]).first <<"\t translates into \t";
+			cin >> playerInput;
+			if(playerInput.compare((_mapBtwnLanguages[wordIndex]).second) == 0);
+
+		}///end show language one to player
+		else{
+
+		}///end show language two to player
+
+		addIndexToIndexesAlreadyShownVector(wordIndex);
+		askToContinue(keepTesting,"do you want to continue testing your vocabulary? (y/n):\t");
 	}while(keepTesting);
 
 }///end testMode()
@@ -175,6 +191,14 @@ bool LanguageGame::hasAlreadyBeenShown(int val){
 	}
 	return false;
 }
+
+///this fxn randomly choses 1 or 2 and returns the value as an integer
+int randomOneOrTwo(){
+	default_random_engine randNumGenerator;
+	uniform_int_distribution<int> uniformIntDistribution(1,2);
+	int randomNum = uniformIntDistribution(randNumGenerator);
+	return randomNum;
+}///end randomOneOrTwo()
 
 
 int LanguageGame::findNewRandomElement(){
