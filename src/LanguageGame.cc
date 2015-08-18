@@ -17,6 +17,67 @@
 
 using namespace std;
 
+///this fxn randomly choses 1 or 2 and returns the value as an integer
+int LanguageGame::randomOneOrTwo(){
+	default_random_engine randNumGenerator;
+	uniform_int_distribution<int> uniformIntDistribution(1,2);
+	int randomNum = uniformIntDistribution(randNumGenerator);
+	return randomNum;
+}///end randomOneOrTwo()
+
+
+///print a phrase which should be translated, ask for the player to type in the translation,
+///and check to see if the translation is correct.  Continue this process until the translation
+///is correct, or three hints have been used
+///
+///mapIndex = the integer key used for _mapBtwnLanguages
+///just before leaving testOnePhrase() the bool successful and int hintsUsed should be updated
+///with nHints and correctTranslation
+void LanguageGame::testOnePhrase(int & hintsUsed, int mapIndex, bool & successful){
+	int nHints = 0;	///<local variable, set hintsUsed equal to this just before leaving testOnePhrase()
+	bool done = false;	///<local var, set successful equal to this just before leaving testOnePhrase()
+	string wordToTranslate, playerInput, correctWordTranslation;
+	int showThisLanguage = randomOneOrTwo();
+	if(showThisLanguage==1){
+		wordToTranslate = _mapBtwnLanguages[mapIndex].first;
+		correctWordTranslation = _mapBtwnLanguages[mapIndex].second;
+	}
+	else{
+		///show a phrase from language two, then ask for the translation into language one
+		wordToTranslate = _mapBtwnLanguages[mapIndex].second;
+		correctWordTranslation = _mapBtwnLanguages[mapIndex].first;
+	}///end else
+
+	///print out a phrase, and ask for the translation
+	cout<< "translate this:\t" << wordToTranslate <<endl;
+	cin >> playerInput;
+	if(playerInput.find(wordToTranslate) != string::npos){
+		cout<<"good work!"<<endl;
+		done = true;
+	}///end if(correct translation with zero hints)
+
+	///if the word was not translated correctly the first time, give up to three characters from
+	///correctWordTranslation as hints to the player
+	else{
+		while(!done || nHints < 3){
+			playerInput.clear();
+			nHints++;	///<increment nHints for every loop iteration
+			cout<<"letter number "<< nHints<<" of the translation is\t"<< correctWordTranslation.at(nHints-1) <<endl;
+			cout<<"translate this:\t"<<  wordToTranslate <<endl;
+			cin >> playerInput;
+			if(playerInput.find(correctWordTranslation) != string::npos){
+				cout<<"good work!"<<endl;
+				done = true;
+			}
+		}///end while(hints are needed)
+	}///end else(the word/phrase was not translated correctly the first time, without any hints)
+
+	///update the vars which were passed by reference to testOnePhrase()
+	hintsUsed = nHints;
+	successful = done;
+}///end testOnePhrase()
+
+
 ///this method is designed to ask a question, receive y/n input, and update a bool variable
 void askToContinue(bool & keepGoing, string outputStatement){
 	cout << outputStatement;
@@ -134,20 +195,18 @@ void LanguageGame::testMode(){
 
 	do{
 		int numHintsUsed = 0;
-		string playerInput;
+		bool correct = false;
 		wordIndex = findNewRandomElement();
-		languageIndex = randomOneOrTwo();
-		if(languageIndex == 1){
-			cout<< (_mapBtwnLanguages[wordIndex]).first <<"\t translates into \t";
-			cin >> playerInput;
-			if(playerInput.compare((_mapBtwnLanguages[wordIndex]).second) == 0);
+		testOnePhrase(numHintsUsed,wordIndex,correct);	///<runs the test on one phrase
 
-		}///end show language one to player
-		else{
-
-		}///end show language two to player
-
+		if(correct){
+			incrementNumCorrect();
+			updateHintsOnCorrectTranslations(numHintsUsed);
+		}
+		else updateHintsOnIncorrectTranslations(numHintsUsed);
+		
 		addIndexToIndexesAlreadyShownVector(wordIndex);
+		incrementNumTested();
 		askToContinue(keepTesting,"do you want to continue testing your vocabulary? (y/n):\t");
 	}while(keepTesting);
 
@@ -191,15 +250,6 @@ bool LanguageGame::hasAlreadyBeenShown(int val){
 	}
 	return false;
 }
-
-///this fxn randomly choses 1 or 2 and returns the value as an integer
-int randomOneOrTwo(){
-	default_random_engine randNumGenerator;
-	uniform_int_distribution<int> uniformIntDistribution(1,2);
-	int randomNum = uniformIntDistribution(randNumGenerator);
-	return randomNum;
-}///end randomOneOrTwo()
-
 
 int LanguageGame::findNewRandomElement(){
 	default_random_engine randNumGenerator;

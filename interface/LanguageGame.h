@@ -56,6 +56,12 @@ class LanguageGame{
 		///and the game will move on to another word or phrase.
 		void runGame();
 
+		///this fxn randomly chooses 1 or 2 and returns the chosen val as an int
+		int randomOneOrTwo();
+	
+		///this method needs access to _mapBtwnLanguages
+		///see LanguageGame.cc for description
+		void testOnePhrase(int & hintsUsed, int mapIndex, bool & successful);
 		///methods to update int and string private member vars
 		///recordDateAndTime() and recordGameMode() will be called once per game
 		///the other increment and update fxns will be called many times per game

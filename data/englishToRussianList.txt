@@ -121,11 +121,11 @@ they want water:они хотят вода
 to cook:готовить
 to love:любить
 I love to cook:Я люблю готовить
-you love to walk:вы любить идти
+you love to walk:вы любишь идти
 Sasha loves to buy pelmeni:Саша она любит купить пельмени
 Devin loves money:Девин он любит деньги
 we love to buy shoes:мы любим купить обувь
-they love to buy spinach:они любит купить шпинат
+they love to buy spinach:они любят купить шпинат
 Vova loves to travel via private bus:Вова он любит ехать в моршутка
 #
 to feel:чувствовать
@@ -176,3 +176,4 @@ happy birthday my friend:с днем рожденый мой друг
 27 - this is a great age:27 - это серьезный возраст
 #
 tuna:тунец
+eggplant:баклажан
