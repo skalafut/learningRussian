@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <stdio.h>
 #include <iostream>
+#include <sstream>
 #include <fstream>
 #include <cmath>
 #include <ctime>
@@ -51,7 +52,7 @@ void LanguageGame::testOnePhrase(int & hintsUsed, int mapIndex, bool & successfu
 	///print out a phrase, and ask for the translation
 	cout<< "translate this:\t" << wordToTranslate <<endl;
 	cin >> playerInput;
-	if(playerInput.find(wordToTranslate) != string::npos){
+	if(playerInput.compare(correctWordTranslation) == 0){
 		cout<<"good work!"<<endl;
 		done = true;
 	}///end if(correct translation with zero hints)
@@ -59,13 +60,13 @@ void LanguageGame::testOnePhrase(int & hintsUsed, int mapIndex, bool & successfu
 	///if the word was not translated correctly the first time, give up to three characters from
 	///correctWordTranslation as hints to the player
 	else{
-		while(!done || nHints < 3){
+		while(!done && nHints < 3){
 			playerInput.clear();
 			nHints++;	///<increment nHints for every loop iteration
 			cout<<"letter number "<< nHints<<" of the translation is\t"<< correctWordTranslation.at(nHints-1) <<endl;
 			cout<<"translate this:\t"<<  wordToTranslate <<endl;
 			cin >> playerInput;
-			if(playerInput.find(correctWordTranslation) != string::npos){
+			if(playerInput.compare(correctWordTranslation) == 0){
 				cout<<"good work!"<<endl;
 				done = true;
 			}

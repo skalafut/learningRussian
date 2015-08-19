@@ -130,7 +130,7 @@ Vova loves to travel via private bus:Вова он любит ехать в мо
 #
 to feel:чувствовать
 I feel bad:Я чувствою плохо
-you feel good:ты чувствуешь хорошо
+you feel good:ты_чувствуешь_хорошо
 Megan feels hot:Меган она чувствует жарко
 Dad feels excellent:Па он чувствует отлично
 we feel hungry:мы чувствуем голодный
