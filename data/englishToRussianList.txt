@@ -4,11 +4,11 @@ lentils:чечевица
 mushrooms:грибы
 oatmeal:овсянка
 chicken:курица
-ground meat:фарш
+ground_meat:фарш
 onion:лук
 table:стол
 chair:стул
-coffee table:кофейный стол
+coffee_table:кофейный_стол
 dog:собака
 milk:молоко
 dill:укроп
@@ -16,7 +16,7 @@ bread:хлеб
 buckwheat:гречка
 rice:рис
 pepper:перец
-green pepper:зеленый перец
+green_pepper:зеленый_перец
 dumpling:пельмени
 beer:пиво
 wine:вино
@@ -26,14 +26,14 @@ spinach:шпинат
 cilantro:кориандер
 cinnamon:корица
 herring:селёдка
-herring under the coat:селёдка под шубо
+herring_under_the_coat:селёдка_под_шубо
 icecream:мороженое
 almond:миндаль
 chocolate:шоколад
 caramel:карамель
 banana:банан
 marshmallow:зефир
-walnut:грецкий орех
+walnut:грецкий_орех
 orange:апельсин
 strawberry:клубника
 #
@@ -47,31 +47,31 @@ mug:кружка
 warm:тепло
 hot:жарко
 hungry:голодный
-mediocre:так себе
+mediocre:так_себе
 good:хорошо
 bad:плохо
 excellent:отлично
-of course:конечно
+of_course:конечно
 my:мой
 friend:друг
 apron:фартук
 ladle:половник
-large pot:коструля
-pot with handle:ковш
+large_pot:коструля
+pot_with_handle:ковш
 steamcooker:пароварка
-steamer for manty:мантоварка
-cotton swab:вото
+steamer_for_manty:мантоварка
+cotton_swab:вото
 clothes:одежда
 #
-simple soup:похлебка
+simple_soup:похлебка
 nickname:похлебкин
 apartment:квартира
 sofa:диван
 towel:полотенце
 shoes:обувь
 boots:ботинки
-fashionable coat:польто
-fur coat:шуба
+fashionable_coat:польто
+fur_coat:шуба
 Monday:Понедельник
 Tuesday:Вторник
 Wednesday:Среда
@@ -80,26 +80,27 @@ Friday:Пятница
 Saturday:Суббота
 Sunday:Воскресенье
 today:сегодня
-every day:каждый день
+every_day:каждый_день
 money:деньги
 hurry:давай
 stupid:тупой
 #
-how to say child:как перевести child
-furthermore:дальше болше
-come with me:поехали
+how_to_say_child:как_перевести_child
+furthermore:дальше_болше
+come_with_me:поехали
 thanks:спасибо
 maybe:пожалуй
-right now:сейчас
-absolutely right now:сейчас же
-how are you:как дела
-her name is:её зовут 
-his name is:его зовут
-my name is:меня зовут
+right_now:сейчас
+absolutely_right_now:сейчас_же
+how_are_you:как_дела
+her_name_is:её_зовут
+his_name_is:его_зовут
+my_name_is:меня_зовут
 who:кто
-where to|what for:куда
-where are they:где они
-what is this:что эта
+where_to:куда
+what_for:куда
+where_are_they:где_они
+what_is_this:что_эта
 #
 intercourse:общение
 heyday:зенит
@@ -108,72 +109,78 @@ car:автомобиль
 bicycle:велосипед
 bus:автобус
 train:поезд
-private bus:моршутка
+private_bus:моршутка
 #
 #
-to want:хочу
-I want milk:Я хочу молоко
-you want oatmeal:ты хочешь овсянка
-Aysa wants chicken:Айса она хочет курица
-Sergei wants buckwheat:Сергей он хочет гречка
-we want beer:мы хотим пиво
-they want water:они хотят вода
-to cook:готовить
-to love:любить
-I love to cook:Я люблю готовить
-you love to walk:вы любишь идти
-Sasha loves to buy pelmeni:Саша она любит купить пельмени
-Devin loves money:Девин он любит деньги
-we love to buy shoes:мы любим купить обувь
-they love to buy spinach:они любят купить шпинат
-Vova loves to travel via private bus:Вова он любит ехать в моршутка
+to_want:хочу
+I_want_milk:Я_хочу_молоко
+you_want_oatmeal:ты_хочешь_овсянка
+Aysa_wants_chicken:Айса_она_хочет_курица
+Sergei_wants_buckwheat:Сергей_он_хочет_гречка
+we_want_beer:мы_хотим_пиво
+they_want_water:они_хотят_вода
+to_cook:готовить
+to_love:любить
+I_love_to_cook:Я_люблю_готовить
+you_love_to_walk:вы_любишь_идти
+Sasha_loves_to_buy_pelmeni:Саша_она_любит_купить_пельмени
+Devin_loves_money:Девин_он_любит_деньги
+we_love_to_buy_shoes:мы_любим_купить_обувь
+they_love_to_buy_spinach:они_любят_купить_шпинат
+Vova_loves_to_travel_via_private_bus:Вова_он_любит_ехать_в_моршутка
 #
-to feel:чувствовать
-I feel bad:Я чувствою плохо
-you feel good:ты_чувствуешь_хорошо
-Megan feels hot:Меган она чувствует жарко
-Dad feels excellent:Па он чувствует отлично
-we feel hungry:мы чувствуем голодный
-they feel so-so:они чувствуют так себе
-to buy:купить
-to be buying:покупать
-to need:нуждаться/нужно
-to walk:идти
-Today I walk:Сегодня Я иду
-tomorrow you walk home:завтра ты идёш в дом
-we walk to the apartment:мы идём в квартира
-they walk to the Russian grocery store:они идут в русский продуктовы магазин
-Aysa walks to the car:Айса она идёт в автомобиль
-Devin walks to the train:Девин он идёт в поезд
-we walk to the store:мы идём в магазин
+to_feel:чувствовать
+I_feel_bad:Я_чувствою_плохо
+you_feel_good:ты_чувствуешь_хорошо
+Megan_feels_hot:Меган_она_чувствует_жарко
+Dad_feels_excellent:Па_он_чувствует_отлично
+we_feel_hungry:мы_чувствуем_голодный
+they_feel_so-so:они_чувствуют_так_себе
+to_buy:купить
+to_be_buying:покупать
+#to_need:нуждаться/нужно
+I_need_water:Меня_нужна_вода
+You_need_beer:Тебе_нужна_пива
+She_needs_wine:Ей_нужно_вино
+He_needs_bread:Ему_нужен_хлеп
+We_need_buckwheat:Нам_нужна_гречка
+they_need_carrots:им_нужен_морковки
+to_walk:идти
+Today_I_walk:Сегодня_Я_иду
+tomorrow_you_walk_home:завтра_ты_идёш_в_дом
+we_walk_to_the_apartment:мы_идём_в_квартира
+they_walk_to_the_Russian_grocery_store:они_идут_в_русский_продуктовы_магазин
+Aysa_walks_to_the_car:Айса_она_идёт_в_автомобиль
+Devin_walks_to_the_train:Девин_он_идёт_в_поезд
+we_walk_to_the_store:мы_идём_в_магазин
 #
 #
-to drive:вести
-I drive a car:Я веду в автомобил
-you drive a bus:ты ведёшь в автобус
-Vova drives a train:Вова он ведёт в поезд
-We drive a private bus:Мы ведём в моршутка
-they drive a car home:они ведут в автомобил в дом
+to_drive:вести
+I_drive_a_car:Я_веду_в_автомобил
+you_drive_a_bus:ты_ведёшь_в_автобус
+Vova_drives_a_train:Вова_он_ведёт_в_поезд
+We_drive_a_private_bus:Мы_ведём_в_моршутка
+they_drive_a_car_home:они_ведут_в_автомобил_в_дом
 #
-to ride:ехать
-Vova rides the train every day:Вова он едит в поезд каждый день
-I ride the bus:Я еду в автобус
-You ride the car:Ты едешь в автомобиль 
-We ride the private bus:Мы едим в моршутка
-Sasha rides the train:Саша едит в поезд
+to_ride:ехать
+Vova_rides_the_train_every_day:Вова_он_едит_в_поезд_каждый_день
+I_ride_the_bus:Я_еду_в_автобус
+You_ride_the_car:Ты_едешь_в_автомобиль_
+We_ride_the_private_bus:Мы_едим_в_моршутка
+Sasha_rides_the_train:Саша_едит_в_поезд
 #
 #
 will:буду
-you need a steamer to cook manty:тебе нужна пароварка чтобы готовить манты
+you_need_a_steamer_to_cook_manty:тебе_нужна_пароварка_чтобы_готовить_манты
 #
-it is me, Sean:это я, Шон
-it is Sergei:это Сергей
+it_is_me,_Sean:это_я,_Шон
+it_is_Sergei:это_Сергей
 #
-it is hot, you want a beer:сейчас жарко, ты хочешь пива
+it_is_hot,_you_want_a_beer:сейчас_жарко,_ты_хочешь_пива
 #
-hello this is Похлебкин:ало Похлебкин слушает
-happy birthday my friend:с днем рожденый мой друг
-27 - this is a great age:27 - это серьезный возраст
+hello_this_is_Похлебкин:ало_Похлебкин_слушает
+happy_birthday_my_friend:с_днем_рожденый_мой_друг
+27_-_this_is_a_great_age:27_-_это_серьезный_возраст
 #
 tuna:тунец
 eggplant:баклажан

@@ -10,20 +10,29 @@
 #include <fstream>
 #include <cmath>
 #include <ctime>
+#include <chrono>	///used for RNG seed
 #include <random>
 
 //#define DEBUG
 //#define DEBUG2
-
+#define DEBUG3
 
 using namespace std;
 
 ///this fxn randomly choses 1 or 2 and returns the value as an integer
 int LanguageGame::randomOneOrTwo(){
-	default_random_engine randNumGenerator;
-	uniform_int_distribution<int> uniformIntDistribution(1,2);
-	int randomNum = uniformIntDistribution(randNumGenerator);
-	return randomNum;
+	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+	default_random_engine randNumGenerator(seed);	///< without this the seed would be the same every time the game is run - bad!!
+	uniform_int_distribution<int> uniformDistribution(1,100);
+	int randomNum = uniformDistribution(randNumGenerator);
+	int valToReturn;
+	if( remainder(randomNum, 2) == 0 ) valToReturn = 1;
+	else valToReturn = 2;
+#ifdef DEBUG3
+	cout<<"randomly generated "<< randomNum <<endl;
+	cout<<"show language number "<< valToReturn <<endl;
+#endif
+	return valToReturn;
 }///end randomOneOrTwo()
 
 
@@ -50,8 +59,9 @@ void LanguageGame::testOnePhrase(int & hintsUsed, int mapIndex, bool & successfu
 	}///end else
 
 	///print out a phrase, and ask for the translation
-	cout<< "translate this:\t" << wordToTranslate <<endl;
+	cout<< "translate this:\t" << wordToTranslate << endl;
 	cin >> playerInput;
+	
 	if(playerInput.compare(correctWordTranslation) == 0){
 		cout<<"good work!"<<endl;
 		done = true;
@@ -252,8 +262,10 @@ bool LanguageGame::hasAlreadyBeenShown(int val){
 	return false;
 }
 
+	
 int LanguageGame::findNewRandomElement(){
-	default_random_engine randNumGenerator;
+	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+	default_random_engine randNumGenerator(seed);
 	uniform_int_distribution<int> uniformIntDistribution(0,_mapBtwnLanguages.size()-1);
 	int newElement = uniformIntDistribution(randNumGenerator);
 
@@ -262,6 +274,11 @@ int LanguageGame::findNewRandomElement(){
 			newElement = uniformIntDistribution(randNumGenerator);
 		}///end while(newElement has already been used)
 	}///end if(newElement has already been used)
+
+#ifdef DEBUG3
+	cout<<"there are "<< _mapBtwnLanguages.size() <<" elements in _mapBtwnLanguages"<<endl;
+	cout<<"the randomly chosen element is "<< newElement<<endl;
+#endif
 
 	return newElement;
 
