@@ -82,6 +82,7 @@ void LanguageGame::testOnePhrase(int & hintsUsed, int mapIndex, bool & successfu
 			}
 		}///end while(hints are needed)
 	}///end else(the word/phrase was not translated correctly the first time, without any hints)
+	if(done==false && nHints==3) cout<<"the correct translation is:\t"<< correctWordTranslation <<endl;
 
 	///update the vars which were passed by reference to testOnePhrase()
 	hintsUsed = nHints;
