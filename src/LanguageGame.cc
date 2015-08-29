@@ -43,11 +43,14 @@ int LanguageGame::randomOneOrTwo(){
 ///mapIndex = the integer key used for _mapBtwnLanguages
 ///just before leaving testOnePhrase() the bool successful and int hintsUsed should be updated
 ///with nHints and correctTranslation
-void LanguageGame::testOnePhrase(int & hintsUsed, int mapIndex, bool & successful){
+///if doOfficeMode is true, then only ask the player to translate phrases from the foreign
+///language into their native language
+void LanguageGame::testOnePhrase(int & hintsUsed, int mapIndex, bool & successful,bool doOfficeMode){
 	int nHints = 0;	///<local variable, set hintsUsed equal to this just before leaving testOnePhrase()
 	bool done = false;	///<local var, set successful equal to this just before leaving testOnePhrase()
 	string wordToTranslate, playerInput, correctWordTranslation;
 	int showThisLanguage = randomOneOrTwo();
+	if(doOfficeMode) showThisLanguage = 2;
 	if(showThisLanguage==1){
 		wordToTranslate = _mapBtwnLanguages[mapIndex].first;
 		correctWordTranslation = _mapBtwnLanguages[mapIndex].second;
@@ -201,7 +204,7 @@ void LanguageGame::reviewMode(){
 
 }///end reviewMode()
 
-void LanguageGame::testMode(){
+void LanguageGame::testMode(bool doOfficeMode){
 	bool keepTesting = false;
 	int wordIndex, languageIndex;	///<languageIndex chooses which language to show to the player
 
@@ -209,7 +212,7 @@ void LanguageGame::testMode(){
 		int numHintsUsed = 0;
 		bool correct = false;
 		wordIndex = findNewRandomElement();
-		testOnePhrase(numHintsUsed,wordIndex,correct);	///<runs the test on one phrase
+		testOnePhrase(numHintsUsed,wordIndex,correct,doOfficeMode);	///<runs the test on one phrase
 
 		if(correct){
 			incrementNumCorrect();
@@ -305,9 +308,10 @@ void LanguageGame::runGame(){
 		cout<<"type t for test mode, and put your vocabulary to the test!"<<endl;
 		cout<<"type i for insert mode, and add new words and phrases to the word bank"<<endl;
 		cout<<"type ns for native speaker insert mode, and teach the computer how to combine existing words in the word bank into sensible sentences, then add these words into the word bank.  For native speakers only!"<<endl;
+		cout<<"type o for office mode, and test your translation skills going from a foreign language to your native language"<<endl;
 
 		cin >> selectedMode;
-		if(selectedMode.find('r')==string::npos && selectedMode.find('i')==string::npos && selectedMode.find('t')==string::npos && selectedMode.find("ns")==string::npos ) knownMode = false;
+		if(selectedMode.find('r')==string::npos && selectedMode.find('i')==string::npos && selectedMode.find('t')==string::npos && selectedMode.find("ns")==string::npos && selectedMode.find('o')==string::npos ) knownMode = false;
 		if(!knownMode) cout<<"the game mode you entered is not recognized!"<<endl;
 
 	}while(!knownMode);
@@ -316,7 +320,8 @@ void LanguageGame::runGame(){
 	recordGameMode(selectedMode);
 	if(selectedMode=="r") reviewMode();
 	if(selectedMode=="i") insertMode();
-	if(selectedMode=="t") testMode();
+	if(selectedMode=="t") testMode(false);
+	if(selectedMode=="o") testMode(true);
 	if(selectedMode=="ns") nativeSpeakerInsertMode();
 
 

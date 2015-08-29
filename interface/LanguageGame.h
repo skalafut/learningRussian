@@ -35,7 +35,7 @@ class LanguageGame{
 
 
 		///test the player's vocabulary
-		void testMode();
+		void testMode(bool doOfficeMode);
 
 
 		///review words and phrases which have been saved to the word and phrase bank
@@ -61,7 +61,8 @@ class LanguageGame{
 	
 		///this method needs access to _mapBtwnLanguages
 		///see LanguageGame.cc for description
-		void testOnePhrase(int & hintsUsed, int mapIndex, bool & successful);
+		void testOnePhrase(int & hintsUsed, int mapIndex, bool & successful, bool doOfficeMode);
+		
 		///methods to update int and string private member vars
 		///recordDateAndTime() and recordGameMode() will be called once per game
 		///the other increment and update fxns will be called many times per game
