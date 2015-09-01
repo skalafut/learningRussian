@@ -163,11 +163,6 @@ We_drive_a_private_bus:Мы_ведём_в_моршутка
 they_drive_a_car_home:они_ведут_в_автомобил_в_дом
 #
 to_ride:ехать
-Vova_rides_the_train_every_day:Вова_он_едит_в_поезд_каждый_день
-I_ride_the_bus:Я_еду_в_автобус
-You_ride_the_car:Ты_едешь_в_автомобиль_
-We_ride_the_private_bus:Мы_едим_в_моршутка
-Sasha_rides_the_train:Саша_едит_в_поезд
 #
 #
 will:буду
@@ -227,3 +222,14 @@ cod:треска
 coconut:кокосовый_орех
 cheek:щека
 condiment:приправа
+to_eat:есть
+I_eat_oatmeal_with_milk_every_day:Я_ем_овсянка_с_молоко_каждый_день
+you_eat_carrots:ты_ешь_морковки
+Megan_eats_walnut:Меган_она_ест_грецкий_орех
+Devin_eats_icecream:Девин_он_ест_мороженое
+Dad_eats_chicken:Па_он_ест_курица
+Mom_eats_dill:Ма_она_ест_укроп
+we_eat_ground_meat:мы_едим_фарш
+they_eat_buckwheat:они_едят_гречка
+we_eat_sour_cream_and_mustard:мы_едим_сметана_и_горчица
+they_eat_blinii_with_potato_onion_banana_apricot_and_apple:они_едят_блини_с_кортошка_лук_банан_абрикос_и_яблоко
