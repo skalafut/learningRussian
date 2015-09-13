@@ -29,7 +29,9 @@ game cannot generate words or phrases on its own.  Future versions of this game 
 feature!
 
 INSTRUCTIONS TO DOWNLOAD AND PLAY THE GAME WITH ENGLISH AND ITALIAN
+
 1. Install C++11 or newer, g++ version 4.6.3 or newer, and github software on your computer.
+
 2. Run this command to download the learningRussian repository and the original development branch, named master.
    git clone https://github.com/skalafut/learningRussian.git
 
@@ -37,13 +39,17 @@ INSTRUCTIONS TO DOWNLOAD AND PLAY THE GAME WITH ENGLISH AND ITALIAN
    git checkout forKellyS 
 
 4. Move to the learningRussian/src/ directory, and run the command 'make clean'.
+
 5. Run the command 'make', and, if everything is compiled successfully, move up one directory
    and into the bin/ directory.
+
 6. Run the executable file named LanguageGame.exe to launch the game.
 
 
 REMINDERS
+
 1. If you want to add improvements to this game please fork the entire learningRussian repository into your own github
    account, and make changes to the source code in the forked repository.
+
 2. Use underscore characters instead of white space when adding an entry to data/englishToItalianList.txt which has
    more than one word. 
