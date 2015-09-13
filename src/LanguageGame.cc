@@ -15,7 +15,7 @@
 
 //#define DEBUG
 //#define DEBUG2
-#define DEBUG3
+//#define DEBUG3
 
 using namespace std;
 
@@ -193,11 +193,15 @@ void LanguageGame::reviewMode(){
 		///now we have a key for _mapBtwnLanguages which has not been used
 		cout<< (_mapBtwnLanguages[wordIndex]).first <<" == "<< (_mapBtwnLanguages[wordIndex]).second <<endl;
 		cout<<"  "<<endl;
-		askToContinue(keepReviewing,"do you want to continue reviewing? (y/n):\t");
-		cout<<"  "<<endl;
 		incrementNumReviewed();
 		addIndexToIndexesAlreadyShownVector(wordIndex);
-
+		if(_indexesAlreadyShown.size() == _mapBtwnLanguages.size() ){
+			std::cout<<"you cycled through all of the words and phrases in englishToRussianList.txt !  Good work!  Add more words or phrases to this file."<<std::endl;
+			break;
+		}
+		askToContinue(keepReviewing,"do you want to continue reviewing? (y/n):\t");
+		cout<<"  "<<endl;
+	
 	}while(keepReviewing);
 
 	cout<<"leaving review mode"<<endl;
@@ -222,6 +226,10 @@ void LanguageGame::testMode(bool doOfficeMode){
 		
 		addIndexToIndexesAlreadyShownVector(wordIndex);
 		incrementNumTested();
+		if(_indexesAlreadyShown.size() == _mapBtwnLanguages.size() ){
+			std::cout<<"you cycled through all of the words and phrases in englishToRussianList.txt !  Good work!  Add more words or phrases to this file."<<std::endl;
+			break;
+		}
 		askToContinue(keepTesting,"do you want to continue testing your vocabulary? (y/n):\t");
 	}while(keepTesting);
 
