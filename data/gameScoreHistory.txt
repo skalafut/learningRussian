@@ -1,68 +1,7 @@
-date	US central time 	numWordsTested  	numWordsCorrect		numHintsOnCorrectWords		numHintsOnIncorrectWords
-08/01/15	16:00	19	15	9	8
-Sun Aug 16 19:46:01 2015
-    i    0    1    0    0    0    0
-Tue Aug 18 16:46:08 2015
-    r    31    0    0    0    0    0
-Tue Aug 18 17:09:51 2015
-    t    0    0    1    1    3    0
-Tue Aug 18 21:01:19 2015
-    t    0    0    2    2    2    0
-Tue Aug 18 21:04:38 2015
-    t    0    0    3    2    0    3
-Tue Aug 18 21:11:22 2015
-    t    0    0    3    2    3    3
-Tue Aug 18 21:16:15 2015
-    t    0    0    3    2    0    3
-Tue Aug 18 21:29:08 2015
-    t    0    0    1    0    0    3
-Tue Aug 18 21:41:58 2015
-    t    0    0    3    3    0    0
-Thu Aug 20 08:32:32 2015
-    t    0    0    1    0    0    3
-Thu Aug 20 08:56:53 2015
-    r    18    0    0    0    0    0
-Thu Aug 20 09:07:32 2015
-    t    0    0    3    2    0    3
-Fri Aug 21 21:21:05 2015
-    r    21    0    0    0    0    0
-Fri Aug 21 21:24:01 2015
-    r    2    0    0    0    0    0
-Fri Aug 21 21:25:46 2015
-    r    6    0    0    0    0    0
-Fri Aug 21 21:26:11 2015
-    t    0    0    4    4    1    0
-Sun Aug 23 20:41:26 2015
-    t    0    0    60    58    10    6
-Sun Aug 23 21:02:08 2015
-    t    0    0    17    16    7    3
-Mon Aug 24 21:27:16 2015
-    i    0    1    0    0    0    0
-Mon Aug 24 22:01:42 2015
-    i    0    6    0    0    0    0
-Sat Aug 29 12:29:15 2015
-    i    0    8    0    0    0    0
-Sat Aug 29 12:42:18 2015
-    i    0    1    0    0    0    0
-Sat Aug 29 12:45:43 2015
-    i    0    1    0    0    0    0
-Sat Aug 29 12:49:04 2015
-    i    0    1    0    0    0    0
-Sat Aug 29 12:52:54 2015
-    i    0    1    0    0    0    0
-Sat Aug 29 12:54:11 2015
-    i    0    3    0    0    0    0
-Sat Aug 29 13:02:19 2015
-    i    0    1    0    0    0    0
-Sat Aug 29 13:03:21 2015
-    i    0    20    0    0    0    0
-Sat Aug 29 13:43:29 2015
-    o    0    0    2    1    0    3
-Mon Aug 31 20:31:41 2015
-    i    0    11    0    0    0    0
-Wed Sep  2 17:40:11 2015
-    r    16    0    0    0    0    0
-Wed Sep  2 17:42:38 2015
-    o    0    0    37    35    18    6
+date	US central time     gameMode   numWordsReviewed   numWordsInserted  	numWordsTested  	numWordsCorrect		numHintsOnCorrectWords		numHintsOnIncorrectWords
 Fri Sep  4 11:51:40 2015
     o    0    0    9    8    2    3
+Sun Sep 13 09:06:10 2015
+    r    3    0    0    0    0    0
+Sun Sep 13 09:06:21 2015
+    t    0    0    1    0    0    3
