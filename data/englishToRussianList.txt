@@ -114,11 +114,11 @@ private_bus:моршутка
 #
 to_want:хочу
 I_want_milk:Я_хочу_молоко
-you_want_oatmeal:ты_хочешь_овсянка
-Aysa_wants_chicken:Айса_она_хочет_курица
-Sergei_wants_buckwheat:Сергей_он_хочет_гречка
+you_want_oatmeal:ты_хочешь_овсянку
+Aysa_wants_chicken:Айса_она_хочет_курицу
+Sergei_wants_buckwheat:Сергей_он_хочет_гречку
 we_want_beer:мы_хотим_пиво
-they_want_water:они_хотят_вода
+they_want_water:они_хотят_воду
 to_cook:готовить
 to_love:любить
 I_love_to_cook:Я_люблю_готовить
