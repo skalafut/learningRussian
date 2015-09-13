@@ -8,7 +8,8 @@ or phrases by itself.
 The data directory contains text files needed to run the game.  The file data/englishToItalianList.txt
 contains a list of English words and phrases, and their translations into Italian.  To use the game
 for another language, the only change is that a different txt file should be used instead of
-englishToItalianList.txt.  In the txt file, the two translations must be separated by a colon.
+englishToItalianList.txt.  In the txt file, the two translations must be separated by a colon, and
+all white space characters between words on a single line must be replaced with underscores.
 The file data/gameScoreHistory.txt keeps track of information pertinent to the user's performance
 in all prior games, including when the games were played, the number of words tested, and the
 number of words translated correctly.
@@ -41,6 +42,8 @@ INSTRUCTIONS TO DOWNLOAD AND PLAY THE GAME WITH ENGLISH AND ITALIAN
 6. Run the executable file named LanguageGame.exe to launch the game.
 
 
-REMINDER
+REMINDERS
 1. If you want to add improvements to this game please fork the entire learningRussian repository into your own github
    account, and make changes to the source code in the forked repository.
+2. Use underscore characters instead of white space when adding an entry to data/englishToItalianList.txt which has
+   more than one word. 
