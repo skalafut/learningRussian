@@ -120,6 +120,12 @@ Sergei_wants_buckwheat:Сергей_он_хочет_гречку
 we_want_beer:мы_хотим_пиво
 they_want_water:они_хотят_воду
 to_cook:готовить
+I_cook_oatmeal_every_day:Я_готовлю_овсянку_каждый_день
+You_cook_beef:Ты_готовишь_говядину
+Megan_cooks_carrot:Меган_она_готовит_морковку
+Devin_cooks_chicken:Девин_он_готовит_курицу
+We_cook_apple:Мы_готовим_яблоко
+They_cook_milk_every_day:Они_готовят_молоко_каждый_день
 to_love:любить
 I_love_to_cook:Я_люблю_готовить
 you_love_to_walk:вы_любишь_идти
@@ -204,7 +210,6 @@ always:всегда
 beef:говядина
 bean:боб
 beef_tea:крепкий_бульон
-beet:свёкла
 berry:ягода
 brine:рассол
 broth:бульон
@@ -223,7 +228,7 @@ coconut:кокосовый_орех
 cheek:щека
 condiment:приправа
 to_eat:есть
-I_eat_oatmeal_with_milk_every_day:Я_ем_овсянка_с_молоко_каждый_день
+I_eat_oatmeal_with_milk_every_day:Я_ем_овсянку_с_молоко_каждый_день
 you_eat_carrots:ты_ешь_морковки
 Megan_eats_walnut:Меган_она_ест_грецкий_орех
 Devin_eats_icecream:Девин_он_ест_мороженое
@@ -233,3 +238,6 @@ we_eat_ground_meat:мы_едим_фарш
 they_eat_buckwheat:они_едят_гречка
 we_eat_sour_cream_and_mustard:мы_едим_сметана_и_горчица
 they_eat_blinii_with_potato_onion_banana_apricot_and_apple:они_едят_блини_с_кортошка_лук_банан_абрикос_и_яблоко
+apple:яблоко
+asparagus:спаржа
+beet:свёкла
