@@ -265,3 +265,8 @@ Vova_drinks_milk_every_day:Вова_он_пьёт_молоко_каждый_де
 we_drink_juice_of_apricots:мы_пьём_сок_абрикосов
 they_drink_juice_of_apples:они_пьют_сок_яблок
 beverage:напиток
+breakfast:завтрак
+Zheka,_it_is_me,_Grandpa_Voloshin.I_need_juice_of_carrots_and_vodka_for_breakfast:Жека,_это_я,_Дедушка_Волошин.Меня_нужна_сок_морковкей_и_водку_для_завтрака.
+pastry:печенье
+boar:кабан
+butter:масло
