@@ -64,7 +64,6 @@ cotton_swab:вото
 clothes:одежда
 #
 simple_soup:похлебка
-nickname:похлебкин
 apartment:квартира
 sofa:диван
 towel:полотенце

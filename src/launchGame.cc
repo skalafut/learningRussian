@@ -12,18 +12,7 @@ int main(){
 	///tell the game where to find the input word list and output score tracker files
 	string localWordList = "../data/englishToRussianList.txt";
 	string localScoreHistory = "../data/gameScoreHistory.txt";
-	/*
-	cout << "enter the path to the word list:\t";
-	cin >> localWordList;
-	cout << endl;
-	cout << "enter the path to the score history file:\t";
-	cin >> localScoreHistory;
-	cout << endl;
-	*/
-
 	LanguageGame newGame(localWordList,localScoreHistory);
-
-
 
 #ifdef DEBUG
 	cout<<"made an instance of LanguageGame class"<<endl;
