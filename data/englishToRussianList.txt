@@ -320,3 +320,5 @@ champagne:шампанское
 circus:цирк
 cycle:цикл
 center:центр
+celery:сельдерей
+cherry:вишня
