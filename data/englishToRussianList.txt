@@ -322,3 +322,16 @@ cycle:цикл
 center:центр
 celery:сельдерей
 cherry:вишня
+I_listen:Я_слушаю
+You_listen:Ты_слушаешь
+He_listens:Он_слушает
+We_listen:Мы_слушаем
+You_all_listen:Вы_слушаете
+They_do_not_listen:Они_не_слушают
+I_ask,_you_answer:Я_спрашиваю,_ты_отвечаешь
+I_play:Я_играю
+You_play:Ты_играешь
+She_plays:Она_играет
+We_play:Мы_играем
+You_all_play:Вы_играете
+They_play:Они_играют
