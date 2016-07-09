@@ -16,3 +16,15 @@ To download the game, first install github software on your computer. Then on a 
     move up one directory and into the bin directory
     ./LanguageGame.exe
 
+New words and phrases can be added to the game in two ways.  When using both methods, new words and phrases must be added in this format:
+word:wordInOtherLanguage
+phrase_one:phrase_one,_in_other_language_with_comma
+else the game will not work.  The first method is to edit the txt file data/englishToRussianList.txt directly.  Editing this file is also the only way to remove or edit words and phrases currently used in the game.  The other method is by running the game through the instructions
+shown above, and playing the game in "insert" mode by typing "i" when the game begins.  This way has the added advantage over directly editing
+the word map file in that your additions to the game word and phrase list are tracked over time in the file data/gameScoreHistory.txt.
+
+Feel free to add new features to this game in your branch, but NEVER execute this command in any branch:
+git push origin master
+or
+git push -f origin master
+
