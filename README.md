@@ -13,6 +13,7 @@ To download the game, first install github software on your computer. Then on a 
     move into the src directory
     type 'make clean' then hit enter
     type 'make' then hit enter to compile the game
+    delete everything from the file data/gameScoreHistory.txt except the first line which has the column titles
     move up one directory and into the bin directory
     ./LanguageGame.exe
 
