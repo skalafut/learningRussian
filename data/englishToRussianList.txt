@@ -8,6 +8,11 @@ what_are_you_teaching:что_ты_учишь
 what_will_you_teach:что_ты_научишь
 what_are_you_learning_to_do:что_ты_учишься
 what_will_you_learn_to_do:что_ты_научишься
+what_are_you_choosing:что_ты_выбираешь
+what_are_you_dreaming_of:что_ты_мечтаешь
+what_do_you_value:что_ты_ценишь
+how_much_do_you_earn:сколько_ты_зарабатываешь
+what_do_you_pay:что_ты_платишь
 where_am_I_studying:где_я_учусь
 what_am_I_studying:что_я_изучаю
 what_am_I_learning:что_я_учу
@@ -17,6 +22,11 @@ what_am_I_teaching:что_я_учу
 what_will_I_teach:что_я_научу
 what_am_I_learning_to_do:что_я_учусь
 what_will_I_learn_to_do:что_я_научусь
+what_am_I_choosing:что_я_выбираю
+what_am_I_dreaming_of:что_я_мечтаю
+what_do_I_value:что_я_ценю
+how_much_do_I_earn:сколько_я_зарабатываю
+what_do_I_pay:что_я_плачу
 where_are_we_studying:где_мы_учимся
 what_are_we_studying:что_мы_изучаем
 what_are_we_learning:что_мы_учим
@@ -26,6 +36,11 @@ what_are_we_teaching:что_мы_учим
 what_will_we_teach:что_мы_научим
 what_are_we_learning_to_do:что_мы_учимся
 what_will_we_learn_to_do:что_мы_научимся
+what_are_we_choosing:что_мы_выбираем
+what_are_we_dreaming_of:что_мы_мечтаем
+what_do_we_value:что_мы_ценим
+how_much_do_we_earn:сколько_мы_зарабатываем
+what_do_we_pay:что_мы_платим
 where_are_they_studying:где_они_учатся
 what_are_they_studying:что_они_изучают
 what_are_they_learning:что_они_учат
@@ -35,3 +50,8 @@ what_are_they_teaching:что_они_учат
 what_will_they_teach:что_они_научат
 what_are_they_learning_to_do:что_они_учатся
 what_will_they_learn_to_do:что_они_научатся
+what_are_they_choosing:что_они_выбирают
+what_are_they_dreaming_of:что_они_мечтают
+what_do_they_value:что_они_ценят
+how_much_do_they_earn:сколько_они_зарабатывают
+what_do_they_pay:что_они_платят
