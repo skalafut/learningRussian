@@ -17,6 +17,9 @@ how_much_do_you_earn:сколько_ты_зарабатываешь
 what_do_you_pay:что_ты_платишь
 you_are_taking_a_shower:ты_принимаешь_душ
 you_will_give_me:ты_мне_дашь
+you_will_hire:ты_наймёшь
+you_will_understand:ты_поймёшь
+soon_you_will_start_hiring:скоро_ты_будешь_начинать_нанимать
 where_am_I_studying:где_я_учусь
 what_am_I_studying:что_я_изучаю
 what_am_I_learning:что_я_учу
@@ -33,6 +36,9 @@ how_much_do_I_earn:сколько_я_зарабатываю
 what_do_I_pay:что_я_плачу
 I_am_taking_a_shower:я_принимаю_душ
 I_will_give_you:я_тебе_дам
+I_will_hire:я_найму
+I_will_understand:я_пойму
+soon_I_will_start_hiring:скоро_я_буду_начинать_нанимать
 where_are_we_studying:где_мы_учимся
 what_are_we_studying:что_мы_изучаем
 what_are_we_learning:что_мы_учим
@@ -49,6 +55,9 @@ how_much_do_we_earn:сколько_мы_зарабатываем
 what_do_we_pay:что_мы_платим
 we_are_taking_a_shower:мы_принимаем_душ
 we_will_give_them:мы_ним_дадим
+we_will_hire:мы_наймём
+we_will_understand:мы_поймём
+soon_we_will_start_hiring:скоро_мы_будем_начинать_нанимать
 where_are_they_studying:где_они_учатся
 what_are_they_studying:что_они_изучают
 what_are_they_learning:что_они_учат
@@ -65,3 +74,6 @@ how_much_do_they_earn:сколько_они_зарабатывают
 what_do_they_pay:что_они_платят
 they_are_taking_a_shower:они_принимают_душ
 you_all_will_give_us:вы_нам_дадите
+they_will_hire:они_наймут
+they_will_understand:они_поймут
+soon_they_will_start_hiring:скоро_они_будут_начинать_нанимать
