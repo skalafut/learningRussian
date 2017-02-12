@@ -186,7 +186,9 @@ void LanguageGame::insertMode(){
 ///if they want to see another word or phrase
 void LanguageGame::reviewMode(){
 	int wordIndex;
-	bool keepReviewing = false;
+	bool keepReviewing = true;
+	int numWords = 0;
+
 
 	do{
 		wordIndex = findNewRandomElement();
@@ -199,9 +201,12 @@ void LanguageGame::reviewMode(){
 			std::cout<<"you cycled through all of the words and phrases in englishToRussianList.txt !  Good work!  Add more words or phrases to this file."<<std::endl;
 			break;
 		}
-		askToContinue(keepReviewing,"do you want to continue reviewing? (y/n):\t");
-		cout<<"  "<<endl;
-	
+		if(numWords > 9){
+			askToContinue(keepReviewing,"do you want to continue reviewing? (y/n):\t");
+			cout<<"  "<<endl;
+			numWords = 0;
+		}
+
 	}while(keepReviewing);
 
 	cout<<"leaving review mode"<<endl;
@@ -209,8 +214,9 @@ void LanguageGame::reviewMode(){
 }///end reviewMode()
 
 void LanguageGame::testMode(bool doOfficeMode){
-	bool keepTesting = false;
+	bool keepTesting = true;
 	int wordIndex, languageIndex;	///<languageIndex chooses which language to show to the player
+	int numWords = 0;
 
 	do{
 		int numHintsUsed = 0;
@@ -226,11 +232,15 @@ void LanguageGame::testMode(bool doOfficeMode){
 		
 		addIndexToIndexesAlreadyShownVector(wordIndex);
 		incrementNumTested();
+		numWords++;
 		if(_indexesAlreadyShown.size() == _mapBtwnLanguages.size() ){
 			std::cout<<"you cycled through all of the words and phrases in englishToRussianList.txt !  Good work!  Add more words or phrases to this file."<<std::endl;
 			break;
 		}
-		askToContinue(keepTesting,"do you want to continue testing your vocabulary? (y/n):\t");
+		if(numWords > 9){
+			askToContinue(keepTesting,"do you want to continue testing your vocabulary? (y/n):\t");
+			numWords = 0;
+		}
 	}while(keepTesting);
 
 }///end testMode()
