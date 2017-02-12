@@ -189,7 +189,6 @@ void LanguageGame::reviewMode(){
 	bool keepReviewing = true;
 	int numWords = 0;
 
-
 	do{
 		wordIndex = findNewRandomElement();
 		///now we have a key for _mapBtwnLanguages which has not been used
@@ -197,11 +196,12 @@ void LanguageGame::reviewMode(){
 		cout<<"  "<<endl;
 		incrementNumReviewed();
 		addIndexToIndexesAlreadyShownVector(wordIndex);
+		numWords++;
 		if(_indexesAlreadyShown.size() == _mapBtwnLanguages.size() ){
 			std::cout<<"you cycled through all of the words and phrases in englishToRussianList.txt !  Good work!  Add more words or phrases to this file."<<std::endl;
 			break;
 		}
-		if(numWords > 9){
+		if(numWords > 1){
 			askToContinue(keepReviewing,"do you want to continue reviewing? (y/n):\t");
 			cout<<"  "<<endl;
 			numWords = 0;
